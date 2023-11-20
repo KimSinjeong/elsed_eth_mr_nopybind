@@ -22,7 +22,8 @@ add_executable(elsed_main src/main.cpp)
 target_link_libraries(elsed_main elsed ${OpenCV_LIBS})
 
 # Create the python library using pybind11
-find_package(pybind11 REQUIRED)
+# find_package(pybind11 REQUIRED)
+add_subdirectory(/home/sjkim/Documents/MR/mr-library-demo/.buildozer/android/platform/build-arm64-v8a/build/other_builds/pybind11/arm64-v8a__ndk_target_21/pybind11/build/lib/pybind11/include)
 pybind11_add_module(pyelsed src/PYAPI.cpp)
 target_link_libraries(pyelsed PRIVATE ${OpenCV_LIBS} elsed)
 target_compile_definitions(pyelsed PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
